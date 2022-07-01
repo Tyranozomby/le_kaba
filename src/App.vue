@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <elem-list class="elem-list"/>
+  <google-map class="google-map"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ElemList from "@/components/ElemList.vue"
+import GoogleMap from "@/components/GoogleMap"
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    GoogleMap,
+    ElemList
+  },
+  data() {
+    return {}
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 0;
+}
+
+.elem-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.google-map {
+
 }
 </style>
